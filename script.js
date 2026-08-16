@@ -1,7 +1,7 @@
-// 1. التحقق من كلمة السر
+// 1. Password Verification
 function checkPassword() {
     const passwordInput = document.getElementById("password-input").value;
-    const secretWord = "love"; // اكتب كلمة السر التي تريدها هنا
+    const secretWord = "MARCY"; // Your password
 
     if (passwordInput === secretWord) {
         document.getElementById("lock-screen").style.display = "none";
@@ -11,8 +11,8 @@ function checkPassword() {
     }
 }
 
-// 2. حساب عداد الوقت (ضع تاريخ بدايتكم هنا)
-const startDate = new Date("2024-01-01T00:00:00"); // عدّل التاريخ هنا
+// 2. Count-Up Timer Starting from May 25, 2025 at 23:33
+const startDate = new Date("2025-05-25T23:33:00"); 
 
 function updateTimer() {
     const now = new Date();
