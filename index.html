@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قصتنا ❤</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- شاشة كلمة السر -->
+    <div id="lock-screen" class="lock-screen">
+        <div class="lock-box">
+            <h2>ادخل كلمة السر 🔒</h2>
+            <input type="password" id="password-input" placeholder="كلمة السر...">
+            <button onclick="checkPassword()">دخول</button>
+            <p id="error-msg" style="color: red; display: none;">كلمة السر خاطئة!</p>
+        </div>
+    </div>
+
+    <!-- المحتوى الرئيسي للموقع -->
+    <div id="main-content" class="main-content hidden">
+        <header>
+            <h1>المكان الصغير اللي بيجمع حكايتنا ❤</h1>
+        </header>
+
+        <!-- عداد الأيام -->
+        <section class="timer-section">
+            <h2>بدايتنا 💕</h2>
+            <div id="timer">
+                <div><span id="days">0</span> يوم</div>
+                <div><span id="hours">0</span> ساعة</div>
+                <div><span id="minutes">0</span> دقيقة</div>
+                <div><span id="seconds">0</span> ثانية</div>
+            </div>
+        </section>
+
+        <!-- الأغنية -->
+        <section class="music-section">
+            <h3>🎵 أغنيتنا</h3>
+            <audio id="bg-music" src="audio/song.mp3" controls></audio>
+        </section>
+
+        <!-- معرض الصور -->
+        <section class="gallery-section">
+            <h3>📸 ذكرياتنا</h3>
+            <div class="gallery">
+                <img src="images/pic1.jpg" alt="ذكرى 1">
+                <img src="images/pic2.jpg" alt="ذكرى 2">
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
