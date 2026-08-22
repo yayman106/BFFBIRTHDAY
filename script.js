@@ -31,3 +31,22 @@ function updateTimer() {
 
 setInterval(updateTimer, 1000);
 updateTimer();
+// Story Book Page Navigation Logic
+let currentPage = 1;
+const totalPages = 4; // Change this number if you add more chapters!
+
+function changePage(direction) {
+    // Hide current page
+    document.getElementById(`page-${currentPage}`).classList.remove('active-page');
+    
+    // Update page index
+    currentPage += direction;
+
+    // Show new page
+    document.getElementById(`page-${currentPage}`).classList.add('active-page');
+
+    // Update buttons & page text
+    document.getElementById('pageIndicator').innerText = `Page ${currentPage} of ${totalPages}`;
+    document.getElementById('prevBtn').disabled = (currentPage === 1);
+    document.getElementById('nextBtn').disabled = (currentPage === totalPages);
+}
