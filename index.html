@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Story ❤</title>
+    <title>Our Story Book ❤</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,22 +11,24 @@
     <!-- Lock Screen -->
     <div id="lock-screen" class="lock-screen">
         <div class="lock-box">
-            <h2>Enter the Password 🔒</h2>
+            <h2>Welcome to Our Little Place ❤</h2>
+            <p>Enter the secret word to open our story</p>
             <input type="password" id="password-input" placeholder="Password...">
-            <button onclick="checkPassword()">Enter</button>
+            <button onclick="checkPassword()">ENTER</button>
             <p id="error-msg" style="color: red; display: none;">Wrong password!</p>
         </div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Main Content: Story Book -->
     <div id="main-content" class="main-content hidden">
+        
         <header>
-            <h1>The little place that holds our story ❤</h1>
+            <h1>The Story of Us 📖</h1>
+            <p class="subtitle">Every second since May 25, 2025</p>
         </header>
 
-        <!-- Timer Section -->
+        <!-- Live Counter -->
         <section class="timer-section">
-            <h2>Our Beginning 💕</h2>
             <div id="timer">
                 <div><span id="days">0</span> Days</div>
                 <div><span id="hours">0</span> Hours</div>
@@ -35,20 +37,66 @@
             </div>
         </section>
 
-        <!-- Song Section -->
+        <!-- Audio Player -->
         <section class="music-section">
-            <h3>🎵 Our Song</h3>
+            <p>🎵 Playing: Marcy's Song</p>
             <audio id="bg-music" src="song.mp3" controls></audio>
         </section>
 
-        <!-- Gallery Section -->
-        <section class="gallery-section">
-            <h3>📸 Our Memories</h3>
-            <div class="gallery">
-                <img src="images/pic1.jpg" alt="Memory 1">
-                <img src="images/pic2.jpg" alt="Memory 2">
+        <!-- Book Container -->
+        <div class="book-container">
+            
+            <!-- Chapter 1 -->
+            <div class="book-page active-page" id="page-1">
+                <div class="page-header">Chapter 1: The Beginning ✨</div>
+                <div class="page-date">May 25, 2025</div>
+                <div class="page-content">
+                    <img src="chapter1.jpg" alt="Chapter 1 Photo" class="polaroid-img">
+                    <p>The day everything started and our story officially began. From the very first hello to hours of non-stop talking.</p>
+                </div>
             </div>
-        </section>
+
+            <!-- Chapter 2 -->
+            <div class="book-page" id="page-2">
+                <div class="page-header">Chapter 2: First Memories 📸</div>
+                <div class="page-date">Building Our Story</div>
+                <div class="page-content">
+                    <img src="chapter2.jpg" alt="Chapter 2 Photo" class="polaroid-img">
+                    <p>Capturing our first smiles, shared laughs, and unforgettable moments together.</p>
+                </div>
+            </div>
+
+            <!-- Chapter 3 -->
+            <div class="book-page" id="page-3">
+                <div class="page-header">Chapter 3: Video Moment 🎥</div>
+                <div class="page-date">A Special Memory</div>
+                <div class="page-content">
+                    <video controls class="page-video">
+                        <source src="video1.mp4" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                    <p>Press play to relive one of our favorite clips together!</p>
+                </div>
+            </div>
+
+            <!-- Chapter 4 -->
+            <div class="book-page" id="page-4">
+                <div class="page-header">Chapter 4: Today & Always 🥂</div>
+                <div class="page-date">To Be Continued...</div>
+                <div class="page-content">
+                    <img src="chapter3.jpg" alt="Chapter 4 Photo" class="polaroid-img">
+                    <p>Here's to endless laughter, countless memories, and many more chapters left to write!</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="book-nav">
+                <button id="prevBtn" onclick="changePage(-1)" disabled>Previous Chapter</button>
+                <span id="pageIndicator">Page 1 of 4</span>
+                <button id="nextBtn" onclick="changePage(1)">Next Chapter</button>
+            </div>
+
+        </div>
     </div>
 
     <script src="script.js"></script>
