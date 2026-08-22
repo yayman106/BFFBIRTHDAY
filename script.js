@@ -77,14 +77,23 @@ document.addEventListener('fullscreenchange', () => {
     }
 });
 
-// Direct Image Lightbox Popup Functions
+// Image Lightbox Popup Functions with Caption Support
 function openLightbox(element) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
     
     if (lightbox && lightboxImg) {
         lightbox.style.display = 'flex';
         lightboxImg.src = element.src;
+        
+        const captionText = element.getAttribute('data-caption');
+        if (captionText) {
+            lightboxCaption.innerText = captionText;
+            lightboxCaption.style.display = 'block';
+        } else {
+            lightboxCaption.style.display = 'none';
+        }
     }
 }
 
