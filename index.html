@@ -47,28 +47,34 @@
         <!-- Book Container -->
         <div class="book-container">
             
-            <!-- Chapter 1 (With 2 Photos) -->
+            <!-- Chapter 1 -->
             <div class="book-page active-page" id="page-1">
                 <div class="page-header">Chapter 1: The Beginning ✨</div>
                 <div class="page-date">May 25, 2025</div>
                 <div class="page-content">
-                    
                     <div class="photo-grid">
-                        <img src="chapter1_1.jpg" alt="Chapter 1 Photo 1" class="polaroid-img clickable-img" onclick="openLightbox(this)">
-                        <img src="chapter1_2.jpg" alt="Chapter 1 Photo 2" class="polaroid-img clickable-img" onclick="openLightbox(this)">
+                        <img src="chapter1_1.jpg" alt="Chapter 1 Photo 1" data-caption="The beginning of us ✨" class="polaroid-img clickable-img" onclick="openLightbox(this)">
+                        <img src="chapter1_2.jpg" alt="Chapter 1 Photo 2" data-caption="Our first shared memory ❤" class="polaroid-img clickable-img" onclick="openLightbox(this)">
                     </div>
-
                     <p>The day everything started and our story officially began. From our very first hello to hours of non-stop talking.</p>
                 </div>
             </div>
 
             <!-- Chapter 2 -->
             <div class="book-page" id="page-2">
-                <div class="page-header">Chapter 2: First Memories 📸</div>
+                <div class="page-header">Chapter 2: How Our Life Goes 📸</div>
                 <div class="page-date">Building Our Story</div>
                 <div class="page-content">
-                    <img src="chapter2.jpg" alt="Chapter 2 Photo" class="polaroid-img clickable-img" onclick="openLightbox(this)">
-                    <p>Capturing our first smiles, shared laughs, and unforgettable moments together.</p>
+                    
+                    <div class="multi-photo-grid">
+                        <!-- Add up to 50+ images below! Add data-caption="..." to set a note on any image -->
+                        <img src="chapter2_1.jpg" alt="Memory 1" data-caption="Our cute coffee date ☕" class="polaroid-img clickable-img" onclick="openLightbox(this)">
+                        <img src="chapter2_2.jpg" alt="Memory 2" data-caption="Late night walk together ✨" class="polaroid-img clickable-img" onclick="openLightbox(this)">
+                        <img src="chapter2_3.jpg" alt="Memory 3" data-caption="A funny moment we will never forget! 😂" class="polaroid-img clickable-img" onclick="openLightbox(this)">
+                        <img src="chapter2_4.jpg" alt="Memory 4" data-caption="Another day, another memory ❤" class="polaroid-img clickable-img" onclick="openLightbox(this)">
+                    </div>
+
+                    <p>Capturing our daily smiles, shared laughs, and all the little moments that make up our journey together.</p>
                 </div>
             </div>
 
@@ -90,7 +96,7 @@
                 <div class="page-header">Chapter 4: Today & Always 🥂</div>
                 <div class="page-date">To Be Continued...</div>
                 <div class="page-content">
-                    <img src="chapter3.jpg" alt="Chapter 4 Photo" class="polaroid-img clickable-img" onclick="openLightbox(this)">
+                    <img src="chapter3.jpg" alt="Chapter 4 Photo" data-caption="To forever! 🥂" class="polaroid-img clickable-img" onclick="openLightbox(this)">
                     <p>Here's to endless laughter, countless memories, and many more chapters left to write!</p>
                 </div>
             </div>
@@ -105,10 +111,13 @@
         </div>
     </div>
 
-    <!-- Image Lightbox Modal -->
+    <!-- Image Lightbox Modal with Caption Support -->
     <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-container" onclick="event.stopPropagation()">
+            <img class="lightbox-content" id="lightbox-img">
+            <p id="lightbox-caption" class="lightbox-caption-text"></p>
+        </div>
     </div>
 
     <script src="script.js"></script>
