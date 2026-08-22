@@ -50,3 +50,32 @@ function changePage(direction) {
     document.getElementById('prevBtn').disabled = (currentPage === 1);
     document.getElementById('nextBtn').disabled = (currentPage === totalPages);
 }
+
+// Toggle Fullscreen Function
+function toggleFullscreen() {
+    const btn = document.getElementById('fullscreenBtn');
+    
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {
+            document.documentElement.webkitRequestFullscreen();
+        }
+        if (btn) btn.innerText = "Exit Fullscreen ✖";
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+        if (btn) btn.innerText = "Enter Fullscreen ⛶";
+    }
+}
+
+// Reset button label if user exits fullscreen via Escape key
+document.addEventListener('fullscreenchange', () => {
+    const btn = document.getElementById('fullscreenBtn');
+    if (!document.fullscreenElement && btn) {
+        btn.innerText = "Enter Fullscreen ⛶";
+    }
+});
