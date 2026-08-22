@@ -154,6 +154,15 @@ header h1 { color: #8b4513; margin-bottom: 5px; font-size: 2rem; }
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     border-radius: 4px;
     box-sizing: border-box;
+    transition: transform 0.2s ease;
+}
+
+.clickable-img {
+    cursor: zoom-in;
+}
+
+.clickable-img:hover {
+    transform: scale(1.03);
 }
 
 /* Side-by-Side Photo Grid Layout */
@@ -223,4 +232,40 @@ header h1 { color: #8b4513; margin-bottom: 5px; font-size: 2rem; }
     font-size: 0.9rem;
     color: #7a6e63;
     font-weight: bold;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 85vh;
+    border: 4px solid white;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px; right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
 }
