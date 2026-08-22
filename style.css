@@ -123,6 +123,7 @@ header h1 { color: #8b4513; margin-bottom: 5px; font-size: 2rem; }
     font-style: italic;
 }
 
+/* Single Polaroid */
 .polaroid-img {
     width: 90%;
     max-width: 380px;
@@ -132,6 +133,21 @@ header h1 { color: #8b4513; margin-bottom: 5px; font-size: 2rem; }
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     border-radius: 4px;
     margin-bottom: 15px;
+}
+
+/* Multi-Photo Grid Layout for Chapter 1 */
+.photo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.photo-grid .polaroid-img {
+    width: 45%;
+    max-width: 200px;
+    margin-bottom: 0;
 }
 
 .page-video {
