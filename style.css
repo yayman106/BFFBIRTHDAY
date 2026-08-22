@@ -1,7 +1,7 @@
 body {
     font-family: 'Georgia', serif;
-    background-color: #2b0b14; /* Deep Burgundy Background */
-    color: #fce4ec; /* Soft Cream Tint Text */
+    background-color: #2b0b14;
+    color: #fce4ec;
     margin: 0;
     padding: 20px;
     text-align: center;
@@ -46,7 +46,7 @@ body {
 
 .lock-box button {
     padding: 10px 25px;
-    background-color: #800020; /* Deep Burgundy */
+    background-color: #800020;
     color: #fff0f5;
     border: none;
     border-radius: 20px;
@@ -112,7 +112,7 @@ header h1 { color: #ffccd5; margin-bottom: 5px; font-size: 2rem; }
 .book-container {
     max-width: 750px;
     margin: 0 auto 40px auto;
-    background: #400a18; /* Rich Deep Burgundy Book Card */
+    background: #400a18;
     border: 3px double #b02a46;
     border-radius: 15px;
     padding: 25px;
@@ -170,7 +170,7 @@ header h1 { color: #ffccd5; margin-bottom: 5px; font-size: 2rem; }
     transform: scale(1.03);
 }
 
-/* Side-by-Side Photo Grid Layout */
+/* 2-Photo Grid Layout */
 .photo-grid {
     display: flex;
     justify-content: center;
@@ -186,6 +186,27 @@ header h1 { color: #ffccd5; margin-bottom: 5px; font-size: 2rem; }
     height: 220px;
     object-fit: cover;
     margin-bottom: 0;
+}
+
+/* Multi-Photo Grid Layout (For 3 up to 50+ Photos) */
+.multi-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+    max-height: 480px;
+    overflow-y: auto;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 1px solid #800020;
+}
+
+.multi-photo-grid .polaroid-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    padding: 5px 5px 12px 5px;
 }
 
 .page-video {
@@ -253,13 +274,33 @@ header h1 { color: #ffccd5; margin-bottom: 5px; font-size: 2rem; }
     cursor: zoom-out;
 }
 
-.lightbox-content {
+.lightbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 90%;
-    max-height: 85vh;
+}
+
+.lightbox-content {
+    max-width: 100%;
+    max-height: 75vh;
     border: 4px solid #fff;
     border-radius: 8px;
     box-shadow: 0 0 25px rgba(255, 204, 213, 0.3);
     animation: zoomIn 0.3s ease;
+}
+
+.lightbox-caption-text {
+    color: #ffccd5;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 12px;
+    text-align: center;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #800020;
 }
 
 @keyframes zoomIn {
