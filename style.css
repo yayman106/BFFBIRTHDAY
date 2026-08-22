@@ -148,15 +148,15 @@ header h1 { color: #ffccd5; margin-bottom: 5px; font-size: 2rem; }
     font-style: italic;
 }
 
-/* Base Polaroid Styling */
+/* Base Polaroid Styling - Burgundy Frame Update */
 .polaroid-img {
     width: 100%;
     max-width: 380px;
     height: auto;
-    background: #fff;
+    background: #4a0e1c;
     padding: 8px 8px 20px 8px;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border: 1px solid #800020;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     border-radius: 4px;
     box-sizing: border-box;
     transition: transform 0.2s ease;
