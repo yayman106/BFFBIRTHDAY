@@ -3,12 +3,10 @@ function checkPassword() {
     const passwordInput = document.getElementById('password-input').value;
     const errorMsg = document.getElementById('error-msg');
     
-    // Set your secret word here
     if (passwordInput.toUpperCase() === 'MARCY') {
         document.getElementById('lock-screen').style.display = 'none';
         document.getElementById('main-content').classList.remove('hidden');
         
-        // Auto play music when unlocked
         const music = document.getElementById('bg-music');
         if (music) { music.play(); }
     } else {
@@ -51,7 +49,7 @@ function changePage(direction) {
     document.getElementById('nextBtn').disabled = (currentPage === totalPages);
 }
 
-// Toggle Fullscreen Function
+// Browser Fullscreen Toggle
 function toggleFullscreen() {
     const btn = document.getElementById('fullscreenBtn');
     
@@ -72,10 +70,27 @@ function toggleFullscreen() {
     }
 }
 
-// Reset button label if user exits fullscreen via Escape key
 document.addEventListener('fullscreenchange', () => {
     const btn = document.getElementById('fullscreenBtn');
     if (!document.fullscreenElement && btn) {
         btn.innerText = "Enter Fullscreen ⛶";
     }
 });
+
+// Image Lightbox Popup Functions
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.clickable-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = img.src;
+        });
+    });
+});
+
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
