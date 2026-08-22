@@ -77,20 +77,20 @@ document.addEventListener('fullscreenchange', () => {
     }
 });
 
-// Image Lightbox Popup Functions
-document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('.clickable-img');
+// Direct Image Lightbox Popup Functions
+function openLightbox(element) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-
-    images.forEach(img => {
-        img.addEventListener('click', () => {
-            lightbox.style.display = 'flex';
-            lightboxImg.src = img.src;
-        });
-    });
-});
+    
+    if (lightbox && lightboxImg) {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = element.src;
+    }
+}
 
 function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.style.display = 'none';
+    }
 }
