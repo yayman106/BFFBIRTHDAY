@@ -1,8 +1,9 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff0f5;
-    color: #333;
+    font-family: 'Georgia', serif;
+    background-color: #f6eec7;
+    color: #4a3f35;
     margin: 0;
+    padding: 20px;
     text-align: center;
     direction: ltr;
 }
@@ -11,7 +12,9 @@ body {
 .lock-screen {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: #ffb6c1;
+    background-color: #f4f1ea;
+    background-image: url('paper-texture.png');
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,58 +22,165 @@ body {
 }
 
 .lock-box {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px 30px;
+    border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 2px solid #6e6153;
+    max-width: 320px;
 }
 
+.lock-box h2 { color: #4a3f35; font-size: 1.4rem; margin-bottom: 5px; }
+.lock-box p { color: #7a6e63; font-size: 0.9rem; margin-bottom: 15px; }
+
 .lock-box input {
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: 2px solid #9e948a;
+    border-radius: 20px;
+    outline: none;
+    font-size: 1rem;
+    text-align: center;
+    width: 80%;
 }
 
 .lock-box button {
-    padding: 10px 20px;
-    background-color: #ff69b4;
-    color: white;
+    padding: 10px 25px;
+    background-color: #6e6153;
+    color: #f4f1ea;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
+    font-weight: bold;
     cursor: pointer;
 }
 
-/* Timer */
 .hidden { display: none; }
+
+/* Header & Timer */
+header h1 { color: #8b4513; margin-bottom: 5px; font-size: 2rem; }
+.subtitle { color: #7a6e63; font-style: italic; margin-top: 0; }
 
 #timer {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    font-size: 1.2rem;
-    margin: 20px 0;
+    gap: 12px;
+    margin: 15px 0;
 }
 
 #timer div {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background: #fff8dc;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #d2b48c;
 }
 
 #timer span {
     font-weight: bold;
-    color: #ff1493;
-    font-size: 1.8rem;
+    color: #8b4513;
+    font-size: 1.4rem;
     display: block;
 }
 
-/* Images */
-.gallery img {
-    width: 80%;
-    max-width: 300px;
+.music-section { margin-bottom: 25px; font-size: 0.95rem; }
+
+/* Story Book Container */
+.book-container {
+    max-width: 550px;
+    margin: 0 auto 40px auto;
+    background: #fffaf0;
+    border: 3px double #8b4513;
     border-radius: 15px;
-    margin: 10px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.book-page {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.book-page.active-page {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-header {
+    font-size: 1.6rem;
+    color: #8b4513;
+    font-weight: bold;
+    border-bottom: 2px solid #d2b48c;
+    padding-bottom: 8px;
+}
+
+.page-date {
+    font-size: 0.9rem;
+    color: #a0522d;
+    margin: 8px 0 15px 0;
+    font-style: italic;
+}
+
+.polaroid-img {
+    width: 90%;
+    max-width: 380px;
+    background: white;
+    padding: 10px 10px 25px 10px;
+    border: 1px solid #ddd;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.page-video {
+    width: 90%;
+    max-width: 380px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.page-content p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #3e2723;
+}
+
+/* Book Controls */
+.book-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    border-top: 1px solid #d2b48c;
+    padding-top: 15px;
+}
+
+.book-nav button {
+    padding: 10px 18px;
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.book-nav button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.book-nav button:hover:not(:disabled) {
+    background-color: #a0522d;
+}
+
+#pageIndicator {
+    font-size: 0.9rem;
+    color: #7a6e63;
+    font-weight: bold;
 }
