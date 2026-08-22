@@ -60,6 +60,26 @@ body {
 header h1 { color: #8b4513; margin-bottom: 5px; font-size: 2rem; }
 .subtitle { color: #7a6e63; font-style: italic; margin-top: 0; }
 
+#fullscreenBtn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #8b4513;
+    color: #fffaf0;
+    border: 1px solid #6e6153;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#fullscreenBtn:hover {
+    background-color: #a0522d;
+    transform: scale(1.05);
+}
+
 #timer {
     display: flex;
     justify-content: center;
@@ -85,7 +105,7 @@ header h1 { color: #8b4513; margin-bottom: 5px; font-size: 2rem; }
 
 /* Story Book Container */
 .book-container {
-    max-width: 750px; /* Expanded container width to comfortably hold side-by-side images */
+    max-width: 750px;
     margin: 0 auto 40px auto;
     background: #fffaf0;
     border: 3px double #8b4513;
@@ -143,15 +163,14 @@ header h1 { color: #8b4513; margin-bottom: 5px; font-size: 2rem; }
     align-items: center;
     gap: 15px;
     margin-bottom: 15px;
-    flex-wrap: wrap; /* Allows stacking gracefully on mobile screens */
+    flex-wrap: wrap;
 }
 
-/* Strict Sizing for Grid Images */
 .photo-grid .polaroid-img {
-    width: 46%;            /* Forces 2 images per row */
-    max-width: 320px;      /* Caps maximum image size */
-    height: 220px;         /* Standardized height */
-    object-fit: cover;     /* Clean cropping without distortion */
+    width: 46%;
+    max-width: 320px;
+    height: 220px;
+    object-fit: cover;
     margin-bottom: 0;
 }
 
